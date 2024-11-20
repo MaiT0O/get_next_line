@@ -6,7 +6,7 @@
 /*   By: ebansse <ebansse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:39:05 by ebansse           #+#    #+#             */
-/*   Updated: 2024/11/18 17:25:56 by ebansse          ###   ########.fr       */
+/*   Updated: 2024/11/20 17:18:52 by ebansse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strchr(const char *string, int searchedChar)
 		return (NULL);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char *s1, char *s2)
 {
 	int		total_size;
 	char	*result;
@@ -86,6 +86,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
-	result[total_size] = 0;
+	result[i] = 0;
 	return (result);
 }
