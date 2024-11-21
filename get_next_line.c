@@ -6,7 +6,7 @@
 /*   By: ebansse <ebansse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:50:45 by ebansse           #+#    #+#             */
-/*   Updated: 2024/11/20 18:21:55 by ebansse          ###   ########.fr       */
+/*   Updated: 2024/11/21 15:58:09 by ebansse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,12 @@ static char	*extract_line(char *str)
 	return (line);
 }
 
-static char *extract_next_line(char *str)
+static char	*extract_next_line(char *str)
 {
 	char	*line;
 	int		i;
 	int		j;
-	
+
 	i = 0;
 	while (str[i] && str[i] != '\n')
 		i++;
@@ -69,7 +69,7 @@ static char *extract_next_line(char *str)
 static char	*read_line(int fd, char *content)
 {
 	char	*buffer;
-	ssize_t bytes_reads;
+	ssize_t	bytes_reads;
 
 	if (!content)
 		content = ft_calloc(1, 1);
@@ -93,7 +93,7 @@ static char	*read_line(int fd, char *content)
 
 char	*get_next_line(int fd)
 {
-	static char *buffer;
+	static char	*buffer;
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
@@ -109,11 +109,21 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-#include <stdio.h>
+/*#include <stdio.h>
 
 void main(void)
 {
 	int	fd;
+	int	i;
+	static char *str;
 
 	fd = open("./test.txt", O_RDONLY);
-}
+	i = 0;
+	while (i < 3)
+	{
+		str = get_next_line(fd);
+		printf("%s", str);
+		free(str);
+		i++;
+	}
+}*/

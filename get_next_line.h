@@ -6,7 +6,7 @@
 /*   By: ebansse <ebansse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:51:13 by ebansse           #+#    #+#             */
-/*   Updated: 2024/11/20 18:22:42 by ebansse          ###   ########.fr       */
+/*   Updated: 2024/11/21 16:03:49 by ebansse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t n);
 char	*ft_strchr(const char *string, int searchedChar);
 char	*ft_strjoin(char *s1, char *s2);
+char	*get_next_line(int fd);
 
 #endif
