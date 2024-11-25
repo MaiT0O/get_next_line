@@ -6,11 +6,11 @@
 /*   By: ebansse <ebansse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:50:45 by ebansse           #+#    #+#             */
-/*   Updated: 2024/11/21 18:23:59 by ebansse          ###   ########.fr       */
+/*   Updated: 2024/11/25 11:11:58 by ebansse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*join_and_free(char *str1, char *str2)
 {
@@ -74,7 +74,7 @@ static char	*read_line(int fd, char *content)
 	if (!content)
 		content = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	bytes_reads = 1;	
+	bytes_reads = 1;
 	while (bytes_reads > 0 && !ft_strchr(buffer, '\n'))
 	{
 		bytes_reads = read(fd, buffer, BUFFER_SIZE);
@@ -111,16 +111,27 @@ char	*get_next_line(int fd)
 void main(void)
 {
 	int	fd;
+	int fd2;
+	int fd3;
 	int	i;
 	static char *str;
+	static char *str2;
+	static char *str3;
 
-	fd = open("./test.txt", O_RDONLY);
+	fd = open("./test1.txt", O_RDONLY);
+	fd2 = open("./test2.txt", O_RDONLY);
+	fd3 = open("./test3.txt", O_RDONLY);
 	i = 0;
 	while (i < 3)
 	{
 		str = get_next_line(fd);
-		printf("%s", str);
+		str2 = get_next_line(fd2);
+		str3 = get_next_line(fd3);
+		
+		printf("%s%s%s", str, str2, str3);
 		free(str);
+		free(str2);
+		free(str3);
 		i++;
 	}
 }*/

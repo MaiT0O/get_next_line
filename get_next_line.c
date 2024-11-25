@@ -6,7 +6,7 @@
 /*   By: ebansse <ebansse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:50:45 by ebansse           #+#    #+#             */
-/*   Updated: 2024/11/21 18:23:36 by ebansse          ###   ########.fr       */
+/*   Updated: 2024/11/25 11:03:41 by ebansse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static char	*read_line(int fd, char *content)
 	if (!content)
 		content = ft_calloc(1, 1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	bytes_reads = 1;	
+	bytes_reads = 1;
 	while (bytes_reads > 0 && !ft_strchr(buffer, '\n'))
 	{
 		bytes_reads = read(fd, buffer, BUFFER_SIZE);
