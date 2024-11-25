@@ -6,7 +6,7 @@
 /*   By: ebansse <ebansse@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 14:50:45 by ebansse           #+#    #+#             */
-/*   Updated: 2024/11/25 11:03:41 by ebansse          ###   ########.fr       */
+/*   Updated: 2024/11/25 11:26:54 by ebansse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	*get_next_line(int fd)
 
 /*#include <stdio.h>
 
-void main(void)
+int main(void)
 {
 	int	fd;
 	int	i;
@@ -123,4 +123,5 @@ void main(void)
 		free(str);
 		i++;
 	}
+	return (0);
 }*/
